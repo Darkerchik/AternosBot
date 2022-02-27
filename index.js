@@ -148,6 +148,9 @@ const bindEvents = () => {
       process.exit(1);
     }
   });
+  client.on("chat", function(username, message){
+    console.log(`[ChatLog] <${username}> ${message}`)
+  });
   client.on("position", packet => {
     client.position = packet;
   });
